@@ -1,0 +1,240 @@
+import pandas as pd
+import matplotlib as mpl
+import matplotlib.pyplot as plt 
+import seaborn as sns
+import numpy as np
+
+#ARICA
+
+#2015 
+
+url = 'https://raw.githubusercontent.com/Foco22/Project/master/180005_2015_Temperatura_.csv' 
+df = pd.read_csv(url, sep = ";") 
+df['mes'] = (range(len(df['momento'])))
+df['mes'] = df['mes'].apply(lambda x: df['momento'][x][3:5])
+df = df.groupby(['mes'], as_index=False)["Ts_Valor"].mean()
+df['año'] = 2015
+df['Region']= 'Aria' 
+df = df[['Region','año','mes','Ts_Valor']]
+
+#2016
+
+url = 'https://raw.githubusercontent.com/Foco22/Project/master/180005_2016_Temperatura_.csv' 
+df_2016 = pd.read_csv(url, sep = ";")
+df_2016['mes'] = (range(len(df_2016['momento'])))
+df_2016['mes'] = df_2016['mes'].apply(lambda x: df_2016['momento'][x][3:5])
+df_2016 = df_2016.groupby(['mes'], as_index=False)["Ts_Valor"].mean()
+df_2016['año'] = 2016
+df_2016['Region']= 'Arica' 
+df_2016 =df_2016[['Region','año','mes','Ts_Valor']]
+
+df_2016
+
+#2017
+
+url = 'https://raw.githubusercontent.com/Foco22/Project/master/180005_2017_Temperatura_.csv' 
+df_2017 = pd.read_csv(url, sep = ";") 
+df_2017['mes'] = (range(len(df_2017['momento'])))
+df_2017['mes'] = df_2017['mes'].apply(lambda x: df_2017['momento'][x][3:5])
+df_2017 = df_2017.groupby(['mes'], as_index=False)["Ts_Valor"].mean()
+df_2017['año'] = 2017 
+df_2017['Region']= 'Arica'
+df_2017 = df_2017[['Region','año','mes','Ts_Valor']]
+df_2017
+
+#2018
+
+url = 'https://raw.githubusercontent.com/Foco22/Project/master/180005_2018_Temperatura_.csv'
+df_2018 = pd.read_csv(url, sep = ";") 
+df_2018['mes'] = (range(len(df_2018['momento'])))
+df_2018['mes'] = df_2018['mes'].apply(lambda x: df_2018['momento'][x][3:5])
+df_2018 = df_2018.groupby(['mes'], as_index=False)["Ts_Valor"].mean()
+df_2018['año'] = 2018
+df_2018['Region']= 'Arica' 
+df_2018 =df_2018[['Region','año','mes','Ts_Valor']]
+
+df_2018
+
+#2019
+
+url = 'https://raw.githubusercontent.com/Foco22/Project/master/180005_2019_Temperatura_.csv'
+df_2019 = pd.read_csv(url, sep = ";") 
+df_2019['mes'] = (range(len(df_2019['momento'])))
+df_2019['mes'] = df_2019['mes'].apply(lambda x: df_2019['momento'][x][3:5])
+df_2019 = df_2019.groupby(['mes'], as_index=False)["Ts_Valor"].mean()
+df_2019['año'] = 2019 
+df_2019['Region']= 'Arica' 
+df_2019 =df_2019[['Region','año','mes','Ts_Valor']]
+df_2019
+
+df_arica = pd.concat([df, df_2016,df_2017,df_2018, df_2019]) 
+df_arica.index = pd.RangeIndex(len(df_arica.index))
+
+df_arica.index = range(len(df_arica.index))
+
+df_arica
+
+#SANTIAGO
+
+#2015 url = 'https://raw.githubusercontent.com/Foco22/Project/master/330020_2015_Temperatura_.csv' 
+df_stgo_2015 = pd.read_csv(url, sep = ";") 
+df_stgo_2015['mes'] = (range(len(df_stgo_2015['momento'])))
+df_stgo_2015['mes'] = df_stgo_2015['mes'].apply(lambda x: df_stgo_2015['momento'][x][3:5])
+df_stgo_2015 = df_stgo_2015.groupby(['mes'], as_index=False)["Ts_Valor"].mean()
+df_stgo_2015['año'] = 2015 
+df_stgo_2015['Region']= 'Santiago' 
+df_stgo_2015 = df_stgo_2015[['Region','año','mes','Ts_Valor']]
+
+#2016
+
+url = 'https://raw.githubusercontent.com/Foco22/Project/master/330020_2016_Temperatura_.csv' 
+df_stgo_2016 = pd.read_csv(url, sep = ";") 
+df_stgo_2016['mes'] = (range(len(df_stgo_2016['momento'])))
+df_stgo_2016['mes'] = df_stgo_2016['mes'].apply(lambda x: df_stgo_2016['momento'][x][3:5])
+df_stgo_2016 = df_stgo_2016.groupby(['mes'], as_index=False)["Ts_Valor"].mean()
+df_stgo_2016['año'] = 2016 
+df_stgo_2016['Region']= 'Santiago' 
+df_stgo_2016 =df_stgo_2016[['Region','año','mes','Ts_Valor']]
+
+df_stgo_2016
+
+#2017
+
+url = 'https://raw.githubusercontent.com/Foco22/Project/master/330020_2017_Temperatura_.csv' 
+df_stgo_2017= pd.read_csv(url, sep = ";") 
+df_stgo_2017['mes'] = (range(len(df_stgo_2017['momento'])))
+df_stgo_2017['mes'] = df_stgo_2017['mes'].apply(lambda x: df_stgo_2017['momento'][x][3:5])
+df_stgo_2017 = df_stgo_2017.groupby(['mes'], as_index=False)["Ts_Valor"].mean()
+df_stgo_2017['año'] = 2017 
+df_stgo_2017['Region']= 'Santiago' 
+df_stgo_2017 = df_stgo_2017[['Region','año','mes','Ts_Valor']]
+df_stgo_2017
+
+#2018
+
+url = 'https://raw.githubusercontent.com/Foco22/Project/master/330020_2018_Temperatura_.csv' 
+df_stgo_2018 = pd.read_csv(url, sep = ";") 
+df_stgo_2018['mes'] = (range(len(df_stgo_2018['momento'])))
+df_stgo_2018['mes'] = df_stgo_2018['mes'].apply(lambda x: df_stgo_2018['momento'][x][3:5])
+df_stgo_2018 = df_stgo_2018.groupby(['mes'], as_index=False)["Ts_Valor"].mean()
+df_stgo_2018['año'] = 2018
+df_stgo_2018['Region']= 'Santiago' 
+df_stgo_2018 =df_stgo_2018[['Region','año','mes','Ts_Valor']]
+
+df_stgo_2018
+
+#2019
+
+url = 'https://raw.githubusercontent.com/Foco22/Project/master/180005_2017_Temperatura_.csv' 
+df_stgo_2019 = pd.read_csv(url, sep = ";") 
+df_stgo_2019['mes'] = (range(len(df_stgo_2019['momento'])))
+df_stgo_2019['mes'] = df_stgo_2019['mes'].apply(lambda x: df_stgo_2019['momento'][x][3:5])
+df_stgo_2019 = df_stgo_2019.groupby(['mes'], as_index=False)["Ts_Valor"].mean()
+df_stgo_2019['año'] = 2019 
+df_stgo_2019['Region']= 'Santiago' 
+df_stgo_2019 =df_stgo_2019[['Region','año','mes','Ts_Valor']]
+df_stgo_2019
+
+df_stgo = pd.concat([df_stgo_2015, df_stgo_2016,df_stgo_2017,df_stgo_2018, df_stgo_2019]) 
+df_stgo.index = pd.RangeIndex(len(df_stgo.index))
+df_stgo.index = range(len(df_stgo.index))
+
+#PUERTO MONTT
+
+#2015
+url = 'https://raw.githubusercontent.com/Foco22/Project/master/410005_2015_Temperatura_.csv' 
+df_pm_2015 = pd.read_csv(url, sep = ";") 
+df_pm_2015['mes'] = (range(len(df_pm_2015['momento'])))
+df_pm_2015['mes'] = df_pm_2015['mes'].apply(lambda x: df_pm_2015['momento'][x][3:5])
+df_pm_2015 = df_pm_2015.groupby(['mes'], as_index=False)["Ts_Valor"].mean()
+df_pm_2015['año'] = 2015 
+df_pm_2015['Region']= 'Puerto Montt' 
+df_pm_2015 = df_pm_2015[['Region','año','mes','Ts_Valor']]
+
+#2016
+
+url = 'https://raw.githubusercontent.com/Foco22/Project/master/410005_2016_Temperatura_.csv' 
+df_pm_2016 = pd.read_csv(url, sep = ";") 
+df_pm_2016['mes'] = (range(len(df_pm_2016['momento'])))
+df_pm_2016['mes'] = df_pm_2016['mes'].apply(lambda x: df_pm_2016['momento'][x][3:5])
+df_pm_2016 = df_pm_2016.groupby(['mes'], as_index=False)["Ts_Valor"].mean()
+df_pm_2016['año'] = 2016 
+df_pm_2016['Region']= 'Puerto Montt' 
+df_pm_2016 =df_pm_2016[['Region','año','mes','Ts_Valor']]
+
+df_pm_2016
+
+#2017
+
+url = 'https://raw.githubusercontent.com/Foco22/Project/master/410005_2017_Temperatura_.csv' 
+df_pm_2017= pd.read_csv(url, sep = ";") 
+df_pm_2017['mes'] = (range(len(df_pm_2017['momento'])))
+df_pm_2017['mes'] = df_pm_2017['mes'].apply(lambda x: df_pm_2017['momento'][x][3:5])
+df_pm_2017 = df_pm_2017.groupby(['mes'], as_index=False)["Ts_Valor"].mean()
+df_pm_2017['año'] = 2017 
+df_pm_2017['Region']= 'Puerto Montt' 
+df_pm_2017 = df_pm_2017[['Region','año','mes','Ts_Valor']]
+df_pm_2017
+
+#2018
+
+url = 'https://raw.githubusercontent.com/Foco22/Project/master/410005_2018_Temperatura_.csv' 
+df_pm_2018 = pd.read_csv(url, sep = ";") 
+df_pm_2018['mes'] = (range(len(df_pm_2018['momento'])))
+df_pm_2018['mes'] = df_pm_2018['mes'].apply(lambda x: df_pm_2018['momento'][x][3:5])
+df_pm_2018 = df_pm_2018.groupby(['mes'], as_index=False)["Ts_Valor"].mean()
+df_pm_2018['año'] = 2018 
+df_pm_2018['Region']= 'Puerto Montt' 
+df_pm_2018 =df_pm_2018[['Region','año','mes','Ts_Valor']]
+
+df_pm_2018
+
+#2019
+
+url ='https://raw.githubusercontent.com/Foco22/Project/master/410005_2019_Temperatura_.csv' 
+df_pm_2019 = pd.read_csv(url, sep = ";") 
+df_pm_2019['mes'] = (range(len(df_pm_2019['momento'])))
+df_pm_2019['mes'] = df_pm_2019['mes'].apply(lambda x: df_pm_2019['momento'][x][3:5])
+df_pm_2019 = df_pm_2019.groupby(['mes'], as_index=False)["Ts_Valor"].mean()
+df_pm_2019['año'] = 2019 
+df_pm_2019['Region']= 'Puerto Montt' 
+df_pm_2019 =df_pm_2019[['Region','año','mes','Ts_Valor']] 
+df_pm_2019
+
+df_pm = pd.concat([df_pm_2015, df_pm_2016,df_pm_2017,df_pm_2018, df_pm_2019])
+df_pm.index = pd.RangeIndex(len(df_pm.index))
+
+df_pm.index = range(len(df_pm.index))
+
+df_pm['Ano-Mes'] = range(len(df_pm['Region']))
+df_stgo['Ano-Mes'] = range(len(df_pm['Region'])) 
+df_arica['Ano-Mes'] = range(len(df_pm['Region']))
+
+date1 = "2015-01-01" # input start date date2 = "2019-12-31" # input end date
+
+month_list = [i for i in pd.date_range(start=date1, end=date2, freq='MS')]
+
+from datetime import datetime 
+import matplotlib.pyplot as plt
+from matplotlib import dates, pyplot
+
+df_pm['Ano-Mes'] = df_pm['Ano-Mes'].apply(lambda x: month_list[x]) 
+df_stgo['Ano-Mes'] = df_stgo['Ano-Mes'].apply(lambda x: month_list[x])
+df_arica['Ano-Mes'] = df_arica['Ano-Mes'].apply(lambda x: month_list[x])
+
+#GRAFICO
+
+hola = pd.date_range('2015-01-01','2019-12-31', freq='MS').strftime("%Y-%b").tolist()
+
+fig, ax = plt.subplots() 
+ax.plot_date(hola, df_arica['Ts_Valor'], '-o', label = 'Arica') 
+ax.plot_date(hola, df_pm['Ts_Valor'], '-o', label ='Puerto Montt') 
+ax.plot_date(hola, df_stgo['Ts_Valor'], '-o', label = 'Santiago') 
+fig.autofmt_xdate() 
+ax.set_xlim( date1, date2) 
+ax.set_ylim([2, 28])
+plt.xlabel('Period') 
+plt.ylabel('Temperature C') 
+plt.title('Temperature over the time') 
+plt.legend()
+plt.show()
